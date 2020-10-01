@@ -48,33 +48,56 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        switch (menuItem.getItemId()){
-            case R.id.nav_about_us:
-                Intent viewIntent =
-                        new Intent("android.intent.action.VIEW",
-                                Uri.parse("https://katha.org/contact-us/"));
-                startActivity(viewIntent);
-                break;
+//         switch (menuItem.getItemId()){
+//             case R.id.nav_about_us:
+//                 Intent viewIntent =
+//                         new Intent("android.intent.action.VIEW",
+//                                 Uri.parse("https://katha.org/contact-us/"));
+//                 startActivity(viewIntent);
+//                 break;
 
-            case R.id.nav_contact_us:
-                viewIntent = new Intent("android.intent.action.VIEW",
-                        Uri.parse("https://katha.org/who-we-are/"));
-                startActivity(viewIntent);
-                break;
+//             case R.id.nav_contact_us:
+//                 viewIntent = new Intent("android.intent.action.VIEW",
+//                         Uri.parse("https://katha.org/who-we-are/"));
+//                 startActivity(viewIntent);
+//                 break;
 
-            case R.id.nav_donate:
-                viewIntent = new Intent("android.intent.action.VIEW",
-                                Uri.parse("https://katha.org/donate-2/"));
-                startActivity(viewIntent);
-                break;
+//             case R.id.nav_donate:
+//                 viewIntent = new Intent("android.intent.action.VIEW",
+//                                 Uri.parse("https://katha.org/donate-2/"));
+//                 startActivity(viewIntent);
+//                 break;
 
-            case R.id.nav_play_store:
-                viewIntent = new Intent("android.intent.action.VIEW",
-                                Uri.parse("https://play.google.com/store?hl=en"));
-                startActivity(viewIntent);
-                break;
+//             case R.id.nav_play_store:
+//                 viewIntent = new Intent("android.intent.action.VIEW",
+//                                 Uri.parse("https://play.google.com/store?hl=en"));
+//                 startActivity(viewIntent);
+//                 break;
 
+//         }
+        
+        Intent viewIntent;
+        if(menuItem.getItemId() == R.id.nav_contact_us){
+            viewIntent = new Intent("android.intent.action.VIEW",
+                            Uri.parse("https://katha.org/contact-us/"));
+            startActivity(viewIntent);
         }
+        else if(menuItem.getItemId() == R.id.nav_about_us){
+            viewIntent = new Intent("android.intent.action.VIEW",
+                            Uri.parse("https://katha.org/who-we-are/"));
+            startActivity(viewIntent);
+        }
+        else if(menuItem.getItemId() == R.id.nav_donate){
+            viewIntent = new Intent("android.intent.action.VIEW",
+                            Uri.parse("https://katha.org/donate-2/"));
+            startActivity(viewIntent);
+        }
+        else if(menuItem.getItemId() == R.id.nav_play_store){
+            viewIntent = new Intent("android.intent.action.VIEW",
+                            Uri.parse("https://play.google.com/store?hl=en"));
+            startActivity(viewIntent);
+        }
+            
         drawer.closeDrawer(GravityCompat.START);
         return true;
 
